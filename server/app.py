@@ -25,7 +25,7 @@ secret_key = os.environ.get('SECRET_KEY') or os.urandom(24)
 app.secret_key = secret_key
 
 #config the database
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('DATABASE_URI')
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///app.db'
 #create th.e migrations 
 migrate = Migrate(app, db)
 #connect the db
